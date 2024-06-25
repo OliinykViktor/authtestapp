@@ -1,4 +1,8 @@
-import { FieldInputProps, FormikErrors, FormikTouched } from "formik";
+import { 
+  FieldInputProps, 
+  FormikErrors, 
+  FormikTouched 
+} from "formik";
 import { TextInputProps } from "react-native-paper";
 
 export interface StateMessageProp {
@@ -15,11 +19,6 @@ export interface ValidatedTextInputProps extends TextInputProps {
   };
   label: string;
   placeholder: string;
-};
-
-export interface LoginFormValues {
-  email: string;
-  password: string;
 };
 
 export interface LoadingProps {

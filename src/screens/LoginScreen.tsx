@@ -15,7 +15,6 @@ import { loginUser } from '../app/redux/slices/authSlice';
 import StateMessage from '../shared/ui/StateMessage';
 import useCurrentThema from '../shared/hooks/useCurrentThema';
 import { ValidatedTextInput } from '../shared/ui';
-import { LoginFormValues } from '../types/types';
 import messages from '../shared/models/messages';
 
 const validationSchema = Yup.object().shape({
@@ -30,8 +29,8 @@ const LoginScreen = () => {
   const dispatch = useDispatch<AppDispatch>();
 
 
-  const handleLogin = (values: LoginFormValues) => {
-    dispatch(loginUser(values.email, values.password));
+  const handleLogin = () => {
+    dispatch(loginUser());
   };
 
   return (
