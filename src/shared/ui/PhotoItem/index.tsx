@@ -9,7 +9,9 @@ import { Image, StyleSheet } from 'react-native';
 import { Photo } from '../../../types/feed';
 
 const PhotoItem = ({ item }: { item: Photo }) => (
-  <Card style={styles.card}>
+  <Card
+    style={styles.card}
+  >
     <Image
       source={{ uri: item.download_url }}
       style={styles.image}

@@ -36,17 +36,12 @@ const authSlice = createSlice({
 
 export const { setLoading, setError, setUserToken, logout } = authSlice.actions;
 
-export const loginUser =
-  (email: string, password: string) => async (dispatch: AppDispatch) => {
+export const loginUser = () => async (dispatch: AppDispatch) => {
     dispatch(setLoading());
     try {
-      if (email === "user@example.com" && password === "12345678") {
         const token = "someToken";
         await AsyncStorage.setItem("userToken", token);
         dispatch(setUserToken(token));
-      } else {
-        throw new Error(messages.errors.invalidCredentials);
-      }
     } catch (e) {
       dispatch(setError(messages.errors.generic));
     }

@@ -46,7 +46,7 @@ const FeedScreen = () => {
         <FlatList
           data={images}
           renderItem={PhotoItem}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item, index) => `${item.id}_${index}`}
           onEndReached={handleLoadMore}
           onEndReachedThreshold={0.5}
           refreshControl={
